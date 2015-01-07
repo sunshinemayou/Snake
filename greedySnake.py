@@ -15,13 +15,20 @@ class snake(Frame):
 		self.top = self.winfo_toplevel()
 		self.top.resizable(False, False)
 		self.grid()
+		
+		#The Canvas is a rectangular area intended for drawing pictures 
+        #or other complex layouts. You can place graphics, text, widgets or frames on a Canvas.
 		self.canvas = Canvas(self)
+		
+		#Without this line,the computer will not know what region the snake will be in
+        #This define the region where snake can move
 		self.canvas.grid()
-		self.canvas.config(width=self.size, height=self.size,relief = RIDGE)
+		
+		self.canvas.config(width = self.size, height = self.size, relief = RIDGE)
 		self.drawgrid()
 		s = self.size/self.gridcount
-		id = self.canvas.create_rectangle(self.body[0][0]*s,self.body[0][1]*s,
-				(self.body[0][0]+1)*s, (self.body[0][1]+1)*s, fill="yellow")
+		id = self.canvas.create_rectangle(self.body[0][0]*s, self.body[0][1]*s,
+				(self.body[0][0]+1)*s, (self.body[0][1]+1)*s, fill = "yellow")
 		self.bodyid.insert(0, id)
 		self.bind_all("<KeyRelease>", self.keyrelease)
 		self.drawfood()
@@ -67,7 +74,7 @@ class snake(Frame):
 		while (x, y) in self.body:
 			x = random.randrange(0, self.gridcount)
 			y = random.randrange(0, self.gridcount)
-		id = self.canvas.create_rectangle(x*s,y*s, (x+1)*s, (y+1)*s, fill="yellow")
+		id = self.canvas.create_rectangle(x*s, y*s, (x+1)*s, (y+1)*s, fill = "yellow")
 		self.food[0] = x
 		self.food[1] = y
 		self.foodid = id

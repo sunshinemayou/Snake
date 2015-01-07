@@ -1,0 +1,10 @@
+before the game start, show the title, rules and the highest score
+	highest score was the number of fruits eaten by the snake
+	title: greedy snake
+	rule:
+		eat the "fruit" appeared in the grid, the more "fruit" the snake eat, the longer
+	the snake will be.
+		if the snake's head hits it's part of the body, the game will over
+#change the color of the fruit(maybe red?)
+when the game end, showed the score and gameover
+#play again button
