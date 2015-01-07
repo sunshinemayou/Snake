@@ -1,8 +1,16 @@
 #!/usr/bin/python
+<<<<<<< HEAD
 from Tkinter import *
 import random
 class snake(Frame):
         def __init__(self, master=None):
+=======
+# When using GitHub, never use master.
+from Tkinter import *
+import random
+class snake(Frame):
+        def __init__(self, master = None):
+>>>>>>> 508d7cc8644c39d02c43dcbf4db28328abad5e72
                 Frame.__init__(self, master)
                 self.body = [(0,0)]
                 self.bodyid = []
@@ -15,7 +23,17 @@ class snake(Frame):
                 self.top = self.winfo_toplevel()
                 self.top.resizable(False, False)
                 self.grid()
+<<<<<<< HEAD
                 self.canvas = Canvas(self)
+=======
+                
+            	#The Canvas is a rectangular area intended for drawing pictures 
+                #or other complex layouts. You can place graphics, text, widgets or frames on a Canvas.
+                self.canvas = Canvas(self)
+                
+                #Without this line,the computer will not know what region the snake will be in
+                #This define the region where snake can move
+>>>>>>> 508d7cc8644c39d02c43dcbf4db28328abad5e72
                 self.canvas.grid()
                 self.canvas.config(width=self.size, height=self.size,relief=RIDGE)
                 self.drawgrid()

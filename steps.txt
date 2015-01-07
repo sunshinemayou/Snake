@@ -1,0 +1,23 @@
+picture random position/ position 16 axis (list)
+picture bind button
+time
+	time cost (start button(False))
+	picture flipping interval (odd/ even)
+	* game time chart
+	* 5 4 3 2 1 (picture bind time interval)
+
+picture flipping
+	identify two pictures
+		if same, use the function show(True) vice visa
+		
+message box
+	* 5 4 3 2 1 bind with a message box
+	after finishing all the cards, pop out and stop the game
+	display time
+	* replay button
+	
+
+
+	
+	
+	
