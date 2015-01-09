@@ -40,7 +40,7 @@ class snake(Frame):
 			x = randrange(0, self.gridNumber)
 			y = randrange(0, self.gridNumber)
 		rec = self.canvas.create_rectangle(x * s, y * s, (x + 1) * s, (y + 1) * s, \
-		fill = "yellow")
+		fill = "orange")
 		self.fruit[0] = x
 		self.fruit[1] = y
 		self.fruitRec = rec
@@ -63,6 +63,7 @@ class snake(Frame):
 		elif next == (self.fruit[0], self.fruit[1]):
 			self.snake.insert(0, next)
 			self.snakeRec.insert(0, self.fruitRec)
+			self.canvas.itemconfig(self.fruitRec, fill = "yellow")
 			self.draw_fruit()
 		else:
 			tail = self.snake.pop()
