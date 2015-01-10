@@ -67,7 +67,7 @@ class snake(Frame):
 			if int(self.score) < len(self.snakeRec):
 				specialOutput.output(len(self.snakeRec))
 				self.score = len(self.snakeRec)
-			tkMessageBox.showinfo("You lose", "You Lose, your score is: " + str(len(self.snakeRec)) + "\n Highest Score: " + str(self.score))
+			tkMessageBox.showinfo("You lose", "You Lose, your score is: " + str(len(self.snakeRec)) + "\nHighest Score: " + str(self.score))
 			exit()
 			
 		elif next == (self.fruit[0], self.fruit[1]):
@@ -94,6 +94,41 @@ class snake(Frame):
 		elif event.keysym == "Left" and self.di != 2:
 			self.di = 4
 			
-app = snake()
-app.master.title("Greedy Snake")
-app.mainloop()
+			
+	
+class start(Frame):
+	
+	def __init__(self, parent):
+		Frame.__init__(self, parent)
+		self.parent = parent
+		self.initUI()
+	
+	def initUI(self):
+		self.parent.title("Greedy Snake Game")
+		self.pack(fill = BOTH, expand = 1)
+		canvas = Canvas(self)
+		canvas.create_text(215, 37, font = ("Purisa", 24), text = "Greedy Snake")
+		canvas.create_text(215, 110, font = ("Times", 18), text = "Rule 1: "\
+		"eat the \'fruit' (orangle rectangle) appeared, \nthe more \'fruit' "\
+		"the snake eat, \nthe longer the snake will be.")
+		canvas.create_text(215, 180, font = ("Times", 18), text = "Rule 2: "\
+		"if the snake\'s head hits it\'s part of the body, \nthe game will over")
+		start = Button(width = 30, height = 10, text = "start", command = self.startButton)
+		start.pack()
+		canvas.pack(fill = BOTH, expand = 1)
+		
+	def startButton(self):
+		self.quit()
+    	
+def main():
+	root = Tk()
+	Start = start(root)
+	root.geometry("450x450")
+	root.mainloop()
+	app = snake()
+	app.master.title("Greedy Snake")
+	app.mainloop()
+
+if __name__ == '__main__':
+	main()
+    	
