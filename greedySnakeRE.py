@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 from Tkinter import *
 from random import *
+import tkMessageBox
+import specialInput
+import specialOutput
 class snake(Frame):
 	def __init__(self):
 		Frame.__init__(self)
@@ -58,13 +61,21 @@ class snake(Frame):
 		else:
 			new[0] = (head[0] - 1) % self.gridNumber
 		next = (new[0], new[1])
+		
 		if next in self.snake:
+			self.score = specialInput.input()
+			if int(self.score) < len(self.snakeRec):
+				specialOutput.output(len(self.snakeRec))
+				self.score = len(self.snakeRec)
+			tkMessageBox.showinfo("You lose", "You Lose, your score is: " + str(len(self.snakeRec)) + "\n Highest Score: " + str(self.score))
 			exit()
+			
 		elif next == (self.fruit[0], self.fruit[1]):
 			self.snake.insert(0, next)
 			self.snakeRec.insert(0, self.fruitRec)
 			self.canvas.itemconfig(self.fruitRec, fill = "yellow")
 			self.draw_fruit()
+			
 		else:
 			tail = self.snake.pop()
 			rec = self.snakeRec.pop()
