@@ -67,6 +67,7 @@ class snake(Frame):
 			if int(self.score) < len(self.snakeRec):
 				specialOutput.output(len(self.snakeRec))
 				self.score = len(self.snakeRec)
+
 			tkMessageBox.showinfo("You lose", "You Lose, your score is: " + str(len(self.snakeRec)) + "\nHighest Score: " + str(self.score))
 			exit()
 			
@@ -93,7 +94,6 @@ class snake(Frame):
 			self.di = 3
 		elif event.keysym == "Left" and self.di != 2:
 			self.di = 4
-			
 			
 	
 class start(Frame):
