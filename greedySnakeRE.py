@@ -14,7 +14,7 @@ class snake(Frame):
 		self.gridNumber = 10
 		self.size = 450
 		self.di = 3
-		self.originalSpeed = 500
+		self.originalSpeed = 300
 		self.grid()
 		
 		self.canvas = Canvas(self)
