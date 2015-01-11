@@ -109,10 +109,10 @@ class start(Frame):
 		canvas = Canvas(self)
 		canvas.create_text(215, 37, font = ("Purisa", 24), text = "Greedy Snake")
 		canvas.create_text(215, 110, font = ("Times", 18), text = "Rule 1: "\
-		"eat the \'fruit' (orangle rectangle) appeared, \nthe more \'fruit' "\
+		"eat the \'fruit' (orange rectangle) appeared, \nthe more \'fruit' "\
 		"the snake eat, \nthe longer the snake will be.")
 		canvas.create_text(215, 180, font = ("Times", 18), text = "Rule 2: "\
-		"if the snake\'s head hits it\'s part of the body, \nthe game will over")
+		"if the snake\'s head hits it\'s part of the body, \nthe game will be over")
 		start = Button(width = 30, height = 10, text = "start", command = self.startButton)
 		start.pack()
 		canvas.pack(fill = BOTH, expand = 1)
